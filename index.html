@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>BUYBUT - Reprise canapé d'occasion</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar" aria-label="Navigation principale">
+      <a class="brand" href="#top" aria-label="Accueil BUYBUT">
+        <img src="buybut-logo.png" alt="Logo BUYBUT" />
+        <span>BUYBUT</span>
+      </a>
+      <nav class="nav-links" aria-label="Sections">
+        <a href="#parcours">Parcours</a>
+        <a href="#estimation">Estimation</a>
+        <a href="#rdv">Enlèvement</a>
+      </nav>
+      <a class="but-mark" href="#simulation" aria-label="BUT">
+        <img src="but-logo.png" alt="Logo BUT" />
+      </a>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-media" aria-hidden="true">
+          <div class="sofa-scene">
+            <div class="wall-art"></div>
+            <div class="lamp"></div>
+            <div class="plant"></div>
+            <div class="sofa">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="voucher">
+              <img src="but-logo.png" alt="" />
+              <strong>Bon d'achat</strong>
+              <span>remis le jour de l'enlèvement</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-content">
+          <div class="logo-pair">
+            <img src="buybut-logo.png" alt="BUYBUT" />
+            <span>x</span>
+            <img src="but-logo.png" alt="BUT" />
+          </div>
+          <p class="eyebrow">Prototype de reprise de sièges d'occasion</p>
+          <h1 id="hero-title">Votre canapé repart, votre bon d'achat arrive.</h1>
+          <p class="hero-copy">
+            Une expérience test pour les clients BUT en France: estimation par IA à partir de photos,
+            reprise à domicile et paiement en bon d'achat BUT.
+          </p>
+          <div class="hero-actions">
+            <a class="primary-action" href="#simulation">Tester l'estimation</a>
+            <a class="secondary-action" href="#parcours">Voir le parcours</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="trust-band" aria-label="Résumé du service">
+        <div>
+          <strong>10+</strong>
+          <span>photos guidées minimum</span>
+        </div>
+        <div>
+          <strong>48h</strong>
+          <span>pour recevoir une proposition</span>
+        </div>
+        <div>
+          <strong>100%</strong>
+          <span>en bon d'achat BUT</span>
+        </div>
+        <div>
+          <strong>France</strong>
+          <span>test national de reprise</span>
+        </div>
+      </section>
+
+      <section id="parcours" class="section split">
+        <div>
+          <p class="eyebrow">Parcours client imaginé</p>
+          <h2>Un tunnel simple, mais assez précis pour sécuriser le prix.</h2>
+          <p>
+            BUYBUT accompagne le vendeur depuis l'identification jusqu'à l'enlèvement. Le prototype
+            simule le rôle de l'IA avec une estimation instantanée, puis affiche une proposition
+            officielle en bon d'achat.
+          </p>
+        </div>
+        <div class="timeline" aria-label="Étapes du parcours">
+          <article>
+            <span>1</span>
+            <h3>Connexion client</h3>
+            <p>Compte BUYBUT, création rapide ou identifiant BUT+.</p>
+          </article>
+          <article>
+            <span>2</span>
+            <h3>Description du canapé</h3>
+            <p>Marque, places, matière, dimensions, état, facture ou achat déclaré.</p>
+          </article>
+          <article>
+            <span>3</span>
+            <h3>Dossier photo assisté</h3>
+            <p>Assises, côtés, pieds, coutures, arrière, dessous et affaissement.</p>
+          </article>
+          <article>
+            <span>4</span>
+            <h3>Proposition BUT</h3>
+            <p>Prix estimé enlèvement inclus, puis validation par email.</p>
+          </article>
+          <article>
+            <span>5</span>
+            <h3>Rendez-vous reprise</h3>
+            <p>Appartement, maison, étage, ascenseur et difficulté d'accès.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="simulation" class="app-shell" aria-labelledby="simulation-title">
+        <aside class="progress-panel">
+          <p class="eyebrow">Démo interactive</p>
+          <h2 id="simulation-title">Créer une demande de reprise</h2>
+          <ol class="stepper" aria-label="Étapes de la demande">
+            <li class="active" data-step-indicator="1"><span>1</span>Compte</li>
+            <li data-step-indicator="2"><span>2</span>Canapé</li>
+            <li data-step-indicator="3"><span>3</span>Photos</li>
+            <li data-step-indicator="4"><span>4</span>Adresse</li>
+            <li data-step-indicator="5"><span>5</span>Offre</li>
+            <li data-step-indicator="6"><span>6</span>RDV</li>
+          </ol>
+          <div class="security-note">
+            <strong>Mode vitrine</strong>
+            <span>Aucune donnée n'est envoyée. L'estimation est simulée côté navigateur.</span>
+          </div>
+        </aside>
+
+        <form class="flow" id="buybackForm">
+          <section class="flow-step active" data-step="1" aria-labelledby="step1-title">
+            <h3 id="step1-title">Connexion</h3>
+            <p class="muted">Choisissez le mode d'identification du client vendeur.</p>
+            <div class="choice-grid">
+              <label class="choice selected">
+                <input type="radio" name="account" value="BUT+" checked />
+                <span>Identifiant BUT+</span>
+                <small>Connexion prioritaire avec le compte fidélité.</small>
+              </label>
+              <label class="choice">
+                <input type="radio" name="account" value="BUYBUT" />
+                <span>Créer un compte</span>
+                <small>Email, téléphone et validation rapide.</small>
+              </label>
+            </div>
+            <label>
+              Email client
+              <input type="email" name="email" value="client.demo@email.fr" required />
+            </label>
+            <div class="flow-actions">
+              <button type="button" class="primary-action next-step">Continuer</button>
+            </div>
+          </section>
+
+          <section class="flow-step" data-step="2" aria-labelledby="step2-title">
+            <h3 id="step2-title">Nature du canapé</h3>
+            <div class="form-grid">
+              <label>Marque
+                <input type="text" name="brand" value="BUT" />
+              </label>
+              <label>Nombre de places
+                <select name="seats">
+                  <option value="2">2 places</option>
+                  <option value="3" selected>3 places</option>
+                  <option value="4">4 places</option>
+                  <option value="5">5 places et plus</option>
+                </select>
+              </label>
+              <label>Matière
+                <select name="material">
+                  <option value="tissu" selected>Tissu</option>
+                  <option value="cuir">Cuir</option>
+                  <option value="velours">Velours</option>
+                  <option value="microfibre">Microfibre</option>
+                </select>
+              </label>
+              <label>Dimensions
+                <input type="text" name="dimensions" value="220 x 95 x 82 cm" />
+              </label>
+              <label>État général
+                <select name="condition">
+                  <option value="excellent">Excellent</option>
+                  <option value="bon" selected>Bon</option>
+                  <option value="correct">Correct</option>
+                  <option value="use">Usé</option>
+                </select>
+              </label>
+              <label>Facture disponible
+                <select name="invoice" id="invoice">
+                  <option value="yes" selected>Oui, je peux l'uploader</option>
+                  <option value="no">Non</option>
+                </select>
+              </label>
+              <label class="invoice-upload">Upload facture
+                <input type="file" accept=".pdf,.jpg,.jpeg,.png" />
+              </label>
+              <label class="fallback-field hidden">Année d'achat
+                <input type="number" name="year" min="1995" max="2026" value="2021" />
+              </label>
+              <label class="fallback-field hidden">Enseigne d'achat
+                <select name="store">
+                  <option>BUT</option>
+                  <option>IKEA</option>
+                  <option>CONFORAMA</option>
+                  <option>Autres</option>
+                </select>
+              </label>
+            </div>
+            <div class="flow-actions">
+              <button type="button" class="secondary-action prev-step">Retour</button>
+              <button type="button" class="primary-action next-step">Continuer</button>
+            </div>
+          </section>
+
+          <section class="flow-step" data-step="3" aria-labelledby="step3-title">
+            <h3 id="step3-title">Photos demandées</h3>
+            <p class="muted">Cochez les prises de vue prêtes. Le parcours exige au moins 10 photos.</p>
+            <div class="photo-grid" id="photoGrid"></div>
+            <label class="upload-zone">
+              <input type="file" accept="image/*" multiple />
+              <span>Ajouter les photos du canapé</span>
+              <small>Démo: la sélection n'est pas envoyée, la checklist suffit à simuler le dossier.</small>
+            </label>
+            <div class="photo-status">
+              <strong id="photoCount">0/10</strong>
+              <span>photos minimum validées</span>
+            </div>
+            <div class="flow-actions">
+              <button type="button" class="secondary-action prev-step">Retour</button>
+              <button type="button" class="primary-action next-step">Continuer</button>
+            </div>
+          </section>
+
+          <section class="flow-step" data-step="4" aria-labelledby="step4-title">
+            <h3 id="step4-title">Adresse d'enlèvement</h3>
+            <div class="form-grid">
+              <label>Adresse
+                <input type="text" name="address" value="18 rue de la Démo" />
+              </label>
+              <label>Code postal
+                <input type="text" name="zipcode" value="75011" />
+              </label>
+              <label>Ville
+                <input type="text" name="city" value="Paris" />
+              </label>
+              <label>Type de logement
+                <select name="homeType">
+                  <option value="house">Maison</option>
+                  <option value="flat" selected>Appartement</option>
+                </select>
+              </label>
+            </div>
+            <div class="flow-actions">
+              <button type="button" class="secondary-action prev-step">Retour</button>
+              <button type="button" class="primary-action" id="estimateBtn">Simuler l'estimation IA</button>
+            </div>
+          </section>
+
+          <section id="estimation" class="flow-step" data-step="5" aria-labelledby="step5-title">
+            <h3 id="step5-title">Proposition estimée</h3>
+            <div class="offer-card">
+              <div>
+                <span>Bon d'achat BUT proposé</span>
+                <strong id="offerAmount">-- €</strong>
+              </div>
+              <img src="but-logo.png" alt="BUT" />
+            </div>
+            <dl class="estimate-lines">
+              <div><dt>Valeur canapé</dt><dd id="baseValue">-- €</dd></div>
+              <div><dt>Qualité dossier photo</dt><dd id="photoBonus">-- €</dd></div>
+              <div><dt>Enlèvement inclus</dt><dd id="pickupCost">-- €</dd></div>
+            </dl>
+            <p class="muted">La proposition officielle sera envoyée par email après validation du dossier.</p>
+            <div class="flow-actions">
+              <button type="button" class="secondary-action prev-step">Retour</button>
+              <button type="button" class="primary-action next-step">Valider la proposition</button>
+            </div>
+          </section>
+
+          <section id="rdv" class="flow-step" data-step="6" aria-labelledby="step6-title">
+            <h3 id="step6-title">Choisir l'enlèvement</h3>
+            <div class="form-grid">
+              <label>Date souhaitée
+                <input type="date" name="pickupDate" />
+              </label>
+              <label>Créneau
+                <select name="slot">
+                  <option>8h - 12h</option>
+                  <option selected>12h - 16h</option>
+                  <option>16h - 20h</option>
+                </select>
+              </label>
+              <label>Étage
+                <input type="number" name="floor" min="0" max="15" value="2" />
+              </label>
+              <label>Ascenseur
+                <select name="elevator">
+                  <option value="yes" selected>Oui</option>
+                  <option value="no">Non</option>
+                </select>
+              </label>
+              <label>Portage difficile
+                <select name="difficulty">
+                  <option value="low" selected>Non</option>
+                  <option value="medium">Couloirs étroits</option>
+                  <option value="high">Escalier complexe / démontage</option>
+                </select>
+              </label>
+            </div>
+            <div class="final-summary">
+              <strong>Email de proposition prêt</strong>
+              <span>Le client accepte l'offre, reçoit la confirmation, puis son bon d'achat BUT le jour de l'enlèvement.</span>
+            </div>
+            <div class="flow-actions">
+              <button type="button" class="secondary-action prev-step">Retour</button>
+              <button type="button" class="primary-action" id="finishBtn">Confirmer la démo</button>
+            </div>
+          </section>
+        </form>
+      </section>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
