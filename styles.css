@@ -24,6 +24,7 @@ body {
   color: var(--ink);
   font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   background: var(--paper);
+  animation: pageFade 520ms ease both;
 }
 
 a {
@@ -69,12 +70,19 @@ select {
   width: 42px;
   height: 42px;
   object-fit: contain;
+  transition: transform 220ms ease;
 }
 
 .but-mark img {
   width: 46px;
   height: 46px;
   object-fit: contain;
+  transition: transform 220ms ease;
+}
+
+.brand:hover img,
+.but-mark:hover img {
+  transform: rotate(-4deg) scale(1.06);
 }
 
 .nav-links {
@@ -87,6 +95,13 @@ select {
   color: #3a3935;
   font-size: 0.94rem;
   font-weight: 700;
+  border-radius: 8px;
+  transition: background 180ms ease, color 180ms ease;
+}
+
+.nav-links a:hover {
+  color: var(--ink);
+  background: rgba(255, 221, 0, 0.34);
 }
 
 .hero {
@@ -108,6 +123,7 @@ select {
     linear-gradient(180deg, rgba(255, 255, 255, 0.3), rgba(255, 250, 240, 0.1)),
     linear-gradient(120deg, #e8dfcf 0%, #fff6df 50%, #dfe8e4 100%);
   box-shadow: var(--shadow);
+  animation: riseIn 680ms 120ms ease both;
 }
 
 .sofa-scene {
@@ -138,6 +154,7 @@ select {
   height: 118px;
   border: 10px solid #151515;
   background: linear-gradient(135deg, var(--but-yellow) 0 48%, var(--but-red) 48% 70%, var(--blue) 70%);
+  animation: slideDown 760ms 320ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .lamp {
@@ -158,6 +175,7 @@ select {
   content: "";
   background: #f4c21f;
   clip-path: polygon(18% 0, 82% 0, 100% 100%, 0 100%);
+  animation: lampGlow 2.8s ease-in-out infinite;
 }
 
 .plant {
@@ -189,6 +207,7 @@ select {
   background: #2f6f67;
   border-radius: 8px 8px 18px 18px;
   box-shadow: 0 28px 0 #1d4641;
+  animation: sofaSettle 900ms 260ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .sofa::before {
@@ -226,14 +245,17 @@ select {
 
 .sofa span:nth-child(1) {
   left: 5%;
+  animation: cushionPulse 4.2s ease-in-out infinite;
 }
 
 .sofa span:nth-child(2) {
   left: 35.5%;
+  animation: cushionPulse 4.2s 280ms ease-in-out infinite;
 }
 
 .sofa span:nth-child(3) {
   right: 5%;
+  animation: cushionPulse 4.2s 560ms ease-in-out infinite;
 }
 
 .voucher {
@@ -251,6 +273,7 @@ select {
   border-radius: 8px;
   box-shadow: 10px 10px 0 var(--but-yellow);
   transform: rotate(-4deg);
+  animation: voucherFloat 3.4s ease-in-out infinite;
 }
 
 .voucher img {
@@ -270,6 +293,7 @@ select {
 .hero-content {
   align-self: center;
   max-width: 660px;
+  animation: riseIn 680ms 220ms ease both;
 }
 
 .logo-pair {
@@ -357,6 +381,17 @@ h3 {
   color: var(--ink);
   background: var(--but-yellow);
   box-shadow: 5px 5px 0 var(--ink);
+  position: relative;
+  overflow: hidden;
+}
+
+.primary-action::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background: linear-gradient(110deg, transparent 0 34%, rgba(255, 255, 255, 0.55) 44%, transparent 56% 100%);
+  transform: translateX(-120%);
+  transition: transform 560ms ease;
 }
 
 .secondary-action {
@@ -367,6 +402,10 @@ h3 {
 .primary-action:hover,
 .secondary-action:hover {
   transform: translateY(-2px);
+}
+
+.primary-action:hover::after {
+  transform: translateX(120%);
 }
 
 .primary-action:active,
@@ -387,6 +426,19 @@ h3 {
   gap: 4px;
   padding: 24px clamp(18px, 4vw, 42px);
   border-right: 1px solid var(--line);
+  animation: riseIn 620ms ease both;
+}
+
+.trust-band div:nth-child(2) {
+  animation-delay: 80ms;
+}
+
+.trust-band div:nth-child(3) {
+  animation-delay: 160ms;
+}
+
+.trust-band div:nth-child(4) {
+  animation-delay: 240ms;
 }
 
 .trust-band strong {
@@ -422,6 +474,13 @@ h3 {
   background: var(--white);
   border: 1px solid var(--line);
   border-radius: 8px;
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.timeline article:hover {
+  transform: translateX(6px);
+  border-color: rgba(21, 21, 21, 0.24);
+  box-shadow: 0 14px 34px rgba(21, 21, 21, 0.08);
 }
 
 .timeline span {
@@ -460,6 +519,7 @@ h3 {
   border: 1px solid var(--line);
   border-radius: 8px;
   box-shadow: var(--shadow);
+  animation: riseIn 620ms ease both;
 }
 
 .progress-panel {
@@ -491,6 +551,7 @@ h3 {
   border: 1px solid transparent;
   border-radius: 8px;
   font-weight: 800;
+  transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
 }
 
 .stepper span {
@@ -508,6 +569,7 @@ h3 {
   color: var(--ink);
   background: #fff8d2;
   border-color: #ead35d;
+  transform: translateX(4px);
 }
 
 .stepper li.active span {
@@ -540,6 +602,7 @@ h3 {
 
 .flow-step.active {
   display: block;
+  animation: stepIn 280ms ease both;
 }
 
 .muted {
@@ -563,11 +626,16 @@ h3 {
   border: 2px solid transparent;
   border-radius: 8px;
   cursor: pointer;
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease, background 180ms ease;
 }
 
 .choice.selected {
   border-color: var(--ink);
   box-shadow: 5px 5px 0 var(--but-yellow);
+}
+
+.choice:hover {
+  transform: translateY(-2px);
 }
 
 .choice input {
@@ -636,6 +704,11 @@ input[type="file"] {
   border: 1px solid var(--line);
   border-radius: 8px;
   cursor: pointer;
+  transition: transform 170ms ease, background 170ms ease, border-color 170ms ease;
+}
+
+.photo-tile:hover {
+  transform: translateY(-2px);
 }
 
 .photo-tile input {
@@ -663,6 +736,7 @@ input[type="file"] {
   color: var(--ink);
   background: #fff8d2;
   border-color: #d7be3d;
+  animation: tickPop 220ms ease both;
 }
 
 .photo-tile.checked::before {
@@ -722,6 +796,26 @@ input[type="file"] {
   border: 3px solid var(--ink);
   border-radius: 8px;
   box-shadow: 8px 8px 0 var(--ink);
+  position: relative;
+  overflow: hidden;
+  animation: offerPop 440ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.offer-card::before {
+  position: absolute;
+  top: -80%;
+  left: -35%;
+  width: 48%;
+  height: 260%;
+  content: "";
+  background: rgba(255, 255, 255, 0.26);
+  transform: rotate(24deg);
+  animation: offerSweep 3.8s ease-in-out infinite;
+}
+
+.offer-card > * {
+  position: relative;
+  z-index: 1;
 }
 
 .offer-card div {
@@ -742,6 +836,7 @@ input[type="file"] {
   width: 82px;
   height: 82px;
   object-fit: contain;
+  animation: logoBounce 3.2s ease-in-out infinite;
 }
 
 .estimate-lines {
@@ -792,6 +887,144 @@ input[type="file"] {
 .toast.show {
   opacity: 1;
   transform: translateY(0);
+}
+
+@keyframes pageFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes riseIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-18px) rotate(-2deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotate(0);
+  }
+}
+
+@keyframes sofaSettle {
+  from {
+    opacity: 0;
+    transform: translateY(34px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes voucherFloat {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-4deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(-2deg);
+  }
+}
+
+@keyframes cushionPulse {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+@keyframes lampGlow {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 0 rgba(244, 194, 31, 0));
+  }
+  50% {
+    filter: drop-shadow(0 0 18px rgba(244, 194, 31, 0.55));
+  }
+}
+
+@keyframes stepIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes tickPop {
+  0% {
+    transform: scale(0.98);
+  }
+  70% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes offerPop {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes offerSweep {
+  0%,
+  38% {
+    transform: translateX(-30%) rotate(24deg);
+  }
+  70%,
+  100% {
+    transform: translateX(330%) rotate(24deg);
+  }
+}
+
+@keyframes logoBounce {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0);
+  }
+  50% {
+    transform: translateY(-5px) rotate(3deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+  }
 }
 
 @media (max-width: 980px) {

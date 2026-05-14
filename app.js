@@ -136,11 +136,11 @@ document.addEventListener("click", (event) => {
 document.querySelector("#estimateBtn").addEventListener("click", () => {
   calculateEstimate();
   setStep(5);
-  showToast("Estimation IA simulée: proposition générée en bon d'achat BUT.");
+  showToast("Estimation immédiate générée: rachat garanti si l'offre est acceptée.");
 });
 
 document.querySelector("#finishBtn").addEventListener("click", () => {
-  showToast("Démo confirmée: email officiel et rendez-vous d'enlèvement prêts.");
+  showToast("Rachat garanti confirmé: email officiel et rendez-vous d'enlèvement prêts.");
 });
 
 document.querySelectorAll(".choice").forEach((choice) => {
